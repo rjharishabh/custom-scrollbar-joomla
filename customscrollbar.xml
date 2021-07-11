@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <extension type="plugin" version="1.0" method="upgrade" group="system">
+        <name>plg_system_custom_scrollbar</name>
+        <author>Rishabh Ranjan Jha</author>
+        <creationDate>July 2021</creationDate>
+        <copyright>(C) 2021 Open Source Matters, Inc.</copyright>
+        <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+        <authorEmail>admin@joomla.org</authorEmail>
+        <authorUrl>www.joomla.org</authorUrl>
+        <version>1.0</version>
+        <description>PLG_SYSTEM_CUSTOM_SCROLLBAR_XML_DESCRIPTION</description>
+
+        <files>
+            <filename plugin="customscrollbar">customscrollbar.php</filename>
+        </files>
+
+        <languages folder="administrator/language">
+            <language tag="en-GB">language/en-GB/en-GB.plg_system_customscrollbar.ini</language>
+            <language tag="en-GB">language/en-GB/en-GB.plg_system_customscrollbar.sys.ini</language>
+        </languages>
+        <config>
+    		<fields name="params">
+    			<fieldset name="basic">
+    				<field
+    					name="site"
+    					type="radio"
+    					layout="joomla.form.field.radio.switcher"
+    					label="Site"
+    					default="0"
+    					filter="integer"
+                        description="bvh"
+    					>
+    					<option value="0">JNO</option>
+    					<option value="1">JYES</option>
+    				</field>
+                    <field
+                        name="width"
+                        type="text"
+
+                        label="text"
+                        showon="site:1"
+                        />
+                    <field
+                        name="bg"
+                        type="color"
+                        label="Background color"
+                        showon="site:1"
+                        />
+
+                            <field
+                                name="style"
+                                type="list"
+
+                                label="Style"
+                                showon="site:1"
+                                >
+                                <option>None</option>
+                                <option>Dotted</option>
+                                <option>Dashed</option>
+                                <option>Solid</option>
+                                <option>Double</option>
+                                <option>Groove</option>
+                                <option>Ridge</option>
+                                <option>Inset</option>
+                                <option>Outset</option>
+</field>
+
+
+<field
+    name="wid"
+    type="text"
+
+    label="border Width"
+    showon="site:1"
+    />
+
+
+    <field
+        name="color"
+        type="color"
+
+        label="border color"
+        showon="site:1"
+        />
+        <field
+            name="adminss"
+            type="radio"
+            layout="joomla.form.field.radio.switcher"
+            label="Admin"
+            default="0"
+            filter="integer"
+            description="bvh"
+            >
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field
+            name="admin"
+            type="radio"
+            layout="joomla.form.field.radio.switcher"
+            label="Sameas site"
+            default="1"
+            filter="integer"
+            description="bvh"
+            showon="adminss:1"
+
+            >
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field
+            name="abg"
+            type="color"
+
+            label="Background color"
+            showon="admin:0"
+            />
+            <field
+                name="awidth"
+                type="text"
+
+                label="text"
+                showon="admin:0"
+                />
+                <field
+                    name="astyle"
+                    type="list"
+
+                    label="Style"
+                    showon="admin:0"
+                    >
+                    <option>Solid</option>
+</field>
+
+
+<field
+name="awid"
+type="text"
+
+label="border Width"
+showon="admin:0"
+/>
+
+
+<field
+name="acolor"
+type="color"
+
+label="border color"
+showon="admin:0"
+/>
+    			</fieldset>
+    		</fields>
+    	</config>
+    </extension>
