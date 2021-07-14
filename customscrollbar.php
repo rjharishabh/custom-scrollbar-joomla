@@ -15,7 +15,6 @@ use Joomla\CMS\Factory;
 /**
  * Custom Scrollbar Plugin.
  *
- * @since  1.5
  */
 class PlgSystemCustomscrollbar extends CMSPlugin
 {
@@ -28,40 +27,62 @@ class PlgSystemCustomscrollbar extends CMSPlugin
 
 	public function SiteScrollbar()
 	{
-		$style = '::-webkit-scrollbar{
-          width:' . str_replace(' ', '', $this->params->get('tkswidth', '12px')) . ';
-          background-color:' . $this->params->get('tksbgcolor', '#ffffff') . ';
-           height: ' . str_replace(' ', '', $this->params->get('tkswidth', '12px')) . ';';
+		$params = $this->params;
 
-		if ($this->params->get('tksborder', '1'))
+		$tkswidth = $params->get('tkswidth', '12px');
+		$tksbgcolor = $params->get('tksbgcolor', '#ffffff');
+		$tksborder = $params->get('tksborder', '1');
+		$tksbwidth = $params->get('tksbwidth', '0');
+		$tksbcolor = $params->get('tksbcolor', '#ffffff');
+		$tksbstyle = $params->get('tksbstyle', 'solid');
+		$tksbradius = $params->get('tksbradius', '100px');
+		$tbsbgcolor = $params->get('tbsbgcolor', '#d1c9cf');
+		$tbsborder = $params->get('tbsborder', '1');
+		$tbsbwidth = $params->get('tbsbwidth', '0');
+		$tbsbcolor = $params->get('tbsbcolor', '#ffffff');
+		$tbsbstyle = $params->get('tbsbstyle', 'solid');
+		$tbsbradius = $params->get('tbsbradius', '100px');
+		$tbhsbgcolor = $params->get('tbhsbgcolor', '#787878');
+		$tbhsborder = $params->get('tbhsborder', '1');
+		$tbhsbwidth = $params->get('tbhsbwidth', '0');
+		$tbhsbcolor = $params->get('tbhsbcolor', '#ffffff');
+		$tbhsbstyle = $params->get('tbhsbstyle', 'solid');
+		$tbhsbradius = $params->get('tbhsbradius', '100px');
+
+		$style = '::-webkit-scrollbar {
+          width:' . str_replace(' ', '', $tkswidth) . ';
+          background-color:' . $tksbgcolor . ';
+           height: ' . str_replace(' ', '', $tkswidth) . ';';
+
+		if ($tksborder)
 		{
-			$style .= 'border: ' . str_replace(' ', '', $this->params->get('tksbwidth', '0')) . ' ' . $this->params->get('tksbcolor', '#ffffff') . ' ' . $this->params->get('tksbstyle', 'solid') . ';
+			$style .= 'border: ' . str_replace(' ', '', $tksbwidth) . ' ' . $tksbcolor . ' ' . $tksbstyle . ';
 
-               border-radius:' . str_replace(' ', '', $this->params->get('tksbradius', '100px')) . ';}';
+               border-radius:' . str_replace(' ', '', $tksbradius) . ';}';
 		}
 
-		   $style .= '::-webkit-scrollbar-thumb{
-             width:' . str_replace(' ', '', $this->params->get('tkswidth', '12px')) . ';
-             background-color:' . $this->params->get('tbsbgcolor', '#d1c9cf') . ';
-              height: ' . str_replace(' ', '', $this->params->get('tkswidth', '12px')) . ';';
+		   $style .= '::-webkit-scrollbar-thumb {
+             width:' . str_replace(' ', '', $tkswidth) . ';
+             background-color:' . $tbsbgcolor . ';
+              height: ' . str_replace(' ', '', $tkswidth) . ';';
 
-		if ($this->params->get('tbsborder', '1'))
+		if ($tbsborder)
 		{
-			$style .= 'border: ' . str_replace(' ', '', $this->params->get('tbsbwidth', '0')) . ' ' . $this->params->get('tbsbcolor', '#ffffff') . ' ' . $this->params->get('tbsbstyle', 'solid') . ';
+			$style .= 'border: ' . str_replace(' ', '', $tbsbwidth) . ' ' . $tbsbcolor . ' ' . $tbsbstyle . ';
 
-                  border-radius:' . str_replace(' ', '', $this->params->get('tbsbradius', '100px')) . ';}';
+                  border-radius:' . str_replace(' ', '', $tbsbradius) . ';}';
 		}
 
 			  $style .= '::-webkit-scrollbar-thumb:hover{
-                width:' . str_replace(' ', '', $this->params->get('tkswidth', '12px')) . ';
-                background-color:' . $this->params->get('tbhsbgcolor', '#787878') . ';
-                 height: ' . str_replace(' ', '', $this->params->get('tkswidth', '12px')) . ';';
+                width:' . str_replace(' ', '', $tkswidth) . ';
+                background-color:' . $tbhsbgcolor . ';
+                 height: ' . str_replace(' ', '', $tkswidth) . ';';
 
-		if ($this->params->get('tbhsborder', '1'))
+		if ($tbhsborder)
 		{
-			$style .= 'border: ' . str_replace(' ', '', $this->params->get('tbhsbwidth', '0')) . ' ' . $this->params->get('tbhsbcolor', '#ffffff') . ' ' . $this->params->get('tbhsbstyle', 'solid') . ';
+			$style .= 'border: ' . str_replace(' ', '', $tbhsbwidth) . ' ' . $tbhsbcolor . ' ' . $tbhsbstyle . ';
 
-                     border-radius:' . str_replace(' ', '', $this->params->get('tbhsbradius', '100px')) . ';}';
+                     border-radius:' . str_replace(' ', '', $tbhsbradius) . ';}';
 		}
 
 		  return $style;
@@ -70,40 +91,62 @@ class PlgSystemCustomscrollbar extends CMSPlugin
 
 	public function AdminScrollbar()
 	{
-		$style = '::-webkit-scrollbar{
-          width:' . str_replace(' ', '', $this->params->get('tkawidth', '12px')) . ';
-          background-color:' . $this->params->get('tkabgcolor', '#ffffff') . ';
-           height: ' . str_replace(' ', '', $this->params->get('tkawidth', '12px')) . ';';
+		$params = $this->params;
 
-		if ($this->params->get('tkaborder', '1'))
+		$tkawidth = $params->get('tkawidth', '12px');
+		$tkabgcolor = $params->get('tkabgcolor', '#ffffff');
+		$tkaborder = $params->get('tkaborder', '1');
+		$tkabwidth = $params->get('tkabwidth', '0');
+		$tkabcolor = $params->get('tkabcolor', '#ffffff');
+		$tkabstyle = $params->get('tkabstyle', 'solid');
+		$tkabradius = $params->get('tkabradius', '100px');
+		$tbabgcolor = $params->get('tbabgcolor', '#d1c9cf');
+		$tbaborder = $params->get('tbaborder', '1');
+		$tbabwidth = $params->get('tbabwidth', '0');
+		$tbabcolor = $params->get('tbabcolor', '#ffffff');
+		$tbabstyle = $params->get('tbabstyle', 'solid');
+		$tbabradius = $params->get('tbabradius', '100px');
+		$tbhabgcolor = $params->get('tbhabgcolor', '#787878');
+		$tbhaborder = $params->get('tbhaborder', '1');
+		$tbhabwidth = $params->get('tbhabwidth', '0');
+		$tbhabcolor = $params->get('tbhabcolor', '#ffffff');
+		$tbhabstyle = $params->get('tbhabstyle', 'solid');
+		$tbhabradius = $params->get('tbhabradius', '100px');
+
+		$style = '::-webkit-scrollbar {
+          width:' . str_replace(' ', '', $tkawidth) . ';
+          background-color:' . $tkabgcolor . ';
+           height: ' . str_replace(' ', '', $tkawidth) . ';';
+
+		if ($tkaborder)
 		{
-			$style .= 'border: ' . str_replace(' ', '', $this->params->get('tkabwidth', '0')) . ' ' . $this->params->get('tkabcolor', '#ffffff') . ' ' . $this->params->get('tkabstyle', 'solid') . ';
+			$style .= 'border: ' . str_replace(' ', '', $tkabwidth) . ' ' . $tkabcolor . ' ' . $tkabstyle . ';
 
-               border-radius:' . str_replace(' ', '', $this->params->get('tkabradius', '100px')) . ';}';
+               border-radius:' . str_replace(' ', '', $tkabradius) . ';}';
 		}
 
-		   $style .= '::-webkit-scrollbar-thumb{
-             width:' . str_replace(' ', '', $this->params->get('tkawidth', '12px')) . ';
-             background-color:' . $this->params->get('tbabgcolor', '#d1c9cf') . ';
-              height: ' . str_replace(' ', '', $this->params->get('tkawidth', '12px')) . ';';
+		   $style .= '::-webkit-scrollbar-thumb {
+             width:' . str_replace(' ', '', $tkawidth) . ';
+             background-color:' . $tbabgcolor . ';
+              height: ' . str_replace(' ', '', $tkawidth) . ';';
 
-		if ($this->params->get('tbaborder', '1'))
+		if ($tbaborder)
 		{
-			$style .= 'border: ' . str_replace(' ', '', $this->params->get('tbabwidth', '0')) . ' ' . $this->params->get('tbabcolor', '#ffffff') . ' ' . $this->params->get('tbabstyle', 'solid') . ';
+			$style .= 'border: ' . str_replace(' ', '', $tbabwidth) . ' ' . $tbabcolor . ' ' . $tbabstyle . ';
 
-                  border-radius:' . str_replace(' ', '', $this->params->get('tbabradius', '100px')) . ';}';
+                  border-radius:' . str_replace(' ', '', $tbabradius) . ';}';
 		}
 
 			  $style .= '::-webkit-scrollbar-thumb:hover{
-                width:' . str_replace(' ', '', $this->params->get('tkawidth', '12px')) . ';
-                background-color:' . $this->params->get('tbhabgcolor', '#787878') . ';
-                 height: ' . str_replace(' ', '', $this->params->get('tkawidth', '12px')) . ';';
+                width:' . str_replace(' ', '', $tkawidth) . ';
+                background-color:' . $tbhabgcolor . ';
+                 height: ' . str_replace(' ', '', $tkawidth) . ';';
 
-		if ($this->params->get('tbhaborder', '1'))
+		if ($tbhaborder)
 		{
-			$style .= 'border: ' . str_replace(' ', '', $this->params->get('tbhabwidth', '0')) . ' ' . $this->params->get('tbhabcolor', '#ffffff') . ' ' . $this->params->get('tbhabstyle', 'solid') . ';
+			$style .= 'border: ' . str_replace(' ', '', $tbhabwidth) . ' ' . $tbhabcolor . ' ' . $tbhabstyle . ';
 
-                     border-radius:' . str_replace(' ', '', $this->params->get('tbhabradius', '100px')) . ';}';
+                     border-radius:' . str_replace(' ', '', $tbhabradius) . ';}';
 		}
 
 		  return $style;

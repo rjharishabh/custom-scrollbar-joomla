@@ -1,372 +1,412 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <extension type="plugin" version="1.0" method="upgrade" group="system">
-        <name>plg_system_custom_scrollbar</name>
-        <author>Rishabh Ranjan Jha</author>
-        <creationDate>July 2021</creationDate>
-        <copyright>(C) 2021 Open Source Matters, Inc.</copyright>
-        <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-        <authorEmail>admin@joomla.org</authorEmail>
-        <authorUrl>www.joomla.org</authorUrl>
-        <version>1.0</version>
-        <description>PLG_SYSTEM_CUSTOM_SCROLLBAR_XML_DESCRIPTION</description>
+<extension type="plugin" version="1.0" method="upgrade" group="system">
+    <name>plg_system_custom_scrollbar</name>
+    <author>RP Extensions</author>
+    <creationDate>July 2021</creationDate>
+    <copyright>(C) 2021 Open Source Matters, Inc.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>rpextensions@gmail.com</authorEmail>
+    <authorUrl>rpextensions.com</authorUrl>
+    <version>1.0.0</version>
+    <description>PLG_SYSTEM_CUSTOM_SCROLLBAR_XML_DESCRIPTION</description>
 
-        <files>
-            <filename plugin="customscrollbar">customscrollbar.php</filename>
-        </files>
+    <files>
+        <filename plugin="customscrollbar">customscrollbar.php</filename>
+    </files>
 
-        <languages folder="administrator/language">
-            <language tag="en-GB">language/en-GB/en-GB.plg_system_customscrollbar.ini</language>
-            <language tag="en-GB">language/en-GB/en-GB.plg_system_customscrollbar.sys.ini</language>
-        </languages>
-        <config>
-    		<fields name="params">
-    			<fieldset name="basic">
+    <languages folder="administrator/language">
+        <language tag="en-GB">language/en-GB/en-GB.plg_system_customscrollbar.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_system_customscrollbar.sys.ini</language>
+    </languages>
 
-                        <field name="cssp" type="note" class="alert alert-info" label="Custom Scrollbar - Site part" />
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
 
-    				<field
-    					name="site"
-    					type="radio"
-    					class="btn-group btn-group-yesno"
-    					label="Custom Scrollbar on Site part"
-    					default="0"
-    					filter="integer"
-    					>
-    					<option value="0">JNO</option>
-    					<option value="1">JYES</option>
-    				</field>
+                <field
+                    name="cssp"
+                    type="note"
+                    class="alert alert-info"
+                    label="Custom Scrollbar - Site part"
+                />
 
-                    <field name="sitetrack" type="note" class="alert alert-info" label="Scrollbar Track - Site part" showon="site:1" />
+                <field
+                    name="site"
+                    type="radio"
+                    class="btn-group btn-group-yesno"
+                    label="Custom Scrollbar on Site part"
+                    default="1"
+                    filter="integer"
+                    >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
 
-                    <field
-                        name="tkswidth"
-                        type="text"
-                        label="Track width"
-                        showon="site:1"
-                        />
+            <field
+                name="sitetrack"
+                type="note"
+                class="alert alert-info"
+                label="Scrollbar Track - Site part"
+                showon="site:1"
+            />
 
-                    <field
-                        name="tksbgcolor"
-                        type="color"
-                        label="Track background color"
-                        showon="site:1"
-                        />
+            <field
+                name="tkswidth"
+                type="text"
+                label="Track width"
+                default="12px"
+                showon="site:1"
+            />
 
-                        <field
-                            name="tksborder"
-                            type="radio"
-        					class="btn-group btn-group-yesno"
-                            label="Want border on track"
-                            showon="site:1"
-                            default="1"
-                            >
-        					<option value="0">JNO</option>
-        					<option value="1">JYES</option>
-        				</field>
+            <field
+                name="tksbgcolor"
+                type="color"
+                label="Track background color"
+                default="#ffffff"
+                showon="site:1"
+            />
 
-                            <field
-                                name="tksbcolor"
-                                type="color"
+            <field
+                name="tksborder"
+                type="radio"
+                class="btn-group btn-group-yesno"
+                label="Want border on track"
+                default="1"
+                showon="site:1"
+                >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
 
-                                label="Track border color"
-                                showon="tksborder:1[AND]site:1"
-                                />
+            <field
+                name="tksbcolor"
+                type="color"
+                label="Track border color"
+                default="#ffffff"
+                showon="tksborder:1[AND]site:1"
+            />
 
-                                <field
-                                    name="tksbwidth"
-                                    type="text"
+            <field
+                name="tksbwidth"
+                type="text"
+                label="Track border width"
+                default="0"
+                showon="tksborder:1[AND]site:1"
+            />
 
-                                    label="Track border width"
-                                showon="tksborder:1[AND]site:1"
-                                    />
+            <field
+                name="tksbstyle"
+                type="list"
+                label="Track border style"
+                default="solid"
+                showon="tksborder:1[AND]site:1"
+                >
+                <option value="none">None</option>
+                <option value="dotted">Dotted</option>
+                <option value="dashed">Dashed</option>
+                <option value="solid">Solid</option>
+                <option value="double">Double</option>
+                <option value="groove">Groove</option>
+                <option value="ridge">Ridge</option>
+                <option value="inset">Inset</option>
+                <option value="outset">Outset</option>
+            </field>
 
-                            <field
-                                name="tksbstyle"
-                                type="list"
-                                label="Track border style"
-                                showon="tksborder:1[AND]site:1"
-                                default="solid"
-                                >
-                                <option value="none">None</option>
-                                <option value="dotted">Dotted</option>
-                                <option value="dashed">Dashed</option>
-                                <option value="solid">Solid</option>
-                                <option value="double">Double</option>
-                                <option value="groove">Groove</option>
-                                <option value="ridge">Ridge</option>
-                                <option value="inset">Inset</option>
-                                <option value="outset">Outset</option>
-</field>
+            <field
+                name="tksbradius"
+                type="text"
+                label="Track border radius"
+                default="100px"
+                showon="tksborder:1[AND]site:1"
+            />
 
-<field
-    name="tksbradius"
-    type="text"
-    label="Track border radius"
-    showon="tksborder:1[AND]site:1"
-    />
+            <field
+                name="sitethumb"
+                type="note"
+                class="alert alert-info"
+                label="Scrollbar Thumb - Site part"
+                showon="site:1"
+            />
 
-<field name="sitethumb" type="note" class="alert alert-info" label="Scrollbar Thumb - Site part" showon="site:1" />
+            <field
+                name="tbsbgcolor"
+                type="color"
+                label="Thumb background color"
+                default="#d1c9cf"
+                showon="site:1"
+            />
 
+            <field
+                name="tbsborder"
+                type="radio"
+                class="btn-group btn-group-yesno"
+                label="Want border on thumb"
+                default="1"
+                showon="site:1"
+                >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
 
-
-<field
-    name="tbsbgcolor"
-    type="color"
-    label="Thumb background color"
-    showon="site:1"
-    />
-
-    <field
-        name="tbsborder"
-        type="radio"
-        class="btn-group btn-group-yesno"
-        label="Want border on thumb"
-        showon="site:1"
-        default="1"
-        >
-        <option value="0">JNO</option>
-        <option value="1">JYES</option>
-    </field>
-
-        <field
-            name="tbsbcolor"
-            type="color"
-
-            label="Thumb border color"
-            showon="tbsborder:1[AND]site:1"
+            <field
+                name="tbsbcolor"
+                type="color"
+                label="Thumb border color"
+                default="#ffffff"
+                showon="tbsborder:1[AND]site:1"
             />
 
             <field
                 name="tbsbwidth"
                 type="text"
-
+                default="0"
                 label="Thumb border width"
-            showon="tbsborder:1[AND]site:1"
-                />
+                showon="tbsborder:1[AND]site:1"
+            />
 
-        <field
-            name="tbsbstyle"
-            type="list"
-            label="Thumb border style"
-            showon="tbsborder:1[AND]site:1"
-            default="solid"
-            >
-            <option value="none">None</option>
-            <option value="dotted">Dotted</option>
-            <option value="dashed">Dashed</option>
-            <option value="solid">Solid</option>
-            <option value="double">Double</option>
-            <option value="groove">Groove</option>
-            <option value="ridge">Ridge</option>
-            <option value="inset">Inset</option>
-            <option value="outset">Outset</option>
-</field>
-<field
-    name="tbsbradius"
-    type="text"
-    label="Track border radius"
-    showon="tbsborder:1[AND]site:1"
-    />
+            <field
+                name="tbsbstyle"
+                type="list"
+                label="Thumb border style"
+                default="solid"
+                showon="tbsborder:1[AND]site:1"
+                >
+                <option value="none">None</option>
+                <option value="dotted">Dotted</option>
+                <option value="dashed">Dashed</option>
+                <option value="solid">Solid</option>
+                <option value="double">Double</option>
+                <option value="groove">Groove</option>
+                <option value="ridge">Ridge</option>
+                <option value="inset">Inset</option>
+                <option value="outset">Outset</option>
+            </field>
 
-<field name="sitethumbhover" type="note" class="alert alert-info" label="Scrollbar Thumb - Site part (on Hover)" showon="site:1" />
+            <field
+                name="tbsbradius"
+                type="text"
+                label="Track border radius"
+                default="100px"
+                showon="tbsborder:1[AND]site:1"
+            />
 
+            <field
+                name="sitethumbhover"
+                type="note"
+                class="alert alert-info"
+                label="Scrollbar Thumb - Site part (on Hover)"
+                showon="site:1"
+            />
 
+            <field
+                name="tbhsbgcolor"
+                type="color"
+                label="Thumb background color"
+                default="#787878"
+                showon="site:1"
+            />
 
-<field
-    name="tbhsbgcolor"
-    type="color"
-    label="Thumb background color"
-    showon="site:1"
-    />
+            <field
+                name="tbhsborder"
+                type="radio"
+                class="btn-group btn-group-yesno"
+                label="Want border on thumb"
+                default="1"
+                showon="site:1"
+                >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
 
-    <field
-        name="tbhsborder"
-        type="radio"
-        class="btn-group btn-group-yesno"
-        label="Want border on thumb"
-        showon="site:1"
-        default="1"
-        >
-        <option value="0">JNO</option>
-        <option value="1">JYES</option>
-    </field>
-
-        <field
-            name="tbhsbcolor"
-            type="color"
-
-            label="Thumb border color"
-            showon="tbhsborder:1[AND]site:1"
+            <field
+                name="tbhsbcolor"
+                type="color"
+                label="Thumb border color"
+                default="#ffffff"
+                showon="tbhsborder:1[AND]site:1"
             />
 
             <field
                 name="tbhsbwidth"
                 type="text"
-
                 label="Thumb border width"
-            showon="tbhsborder:1[AND]site:1"
-                />
+                default="0"
+                showon="tbhsborder:1[AND]site:1"
+            />
 
-        <field
-            name="tbhsbstyle"
-            type="list"
-            label="Thumb border style"
-            showon="tbhsborder:1[AND]site:1"
-            default="solid"
-            >
-            <option value="none">None</option>
-            <option value="dotted">Dotted</option>
-            <option value="dashed">Dashed</option>
-            <option value="solid">Solid</option>
-            <option value="double">Double</option>
-            <option value="groove">Groove</option>
-            <option value="ridge">Ridge</option>
-            <option value="inset">Inset</option>
-            <option value="outset">Outset</option>
-</field>
-<field
-    name="tbhsbradius"
-    type="text"
-    label="Track border radius"
-    showon="tbhsborder:1[AND]site:1"
-    />
+            <field
+                name="tbhsbstyle"
+                type="list"
+                label="Thumb border style"
+                default="solid"
+                showon="tbhsborder:1[AND]site:1"
+                >
+                <option value="none">None</option>
+                <option value="dotted">Dotted</option>
+                <option value="dashed">Dashed</option>
+                <option value="solid">Solid</option>
+                <option value="double">Double</option>
+                <option value="groove">Groove</option>
+                <option value="ridge">Ridge</option>
+                <option value="inset">Inset</option>
+                <option value="outset">Outset</option>
+            </field>
 
+            <field
+                name="tbhsbradius"
+                type="text"
+                label="Track border radius"
+                default="100px"
+                showon="tbhsborder:1[AND]site:1"
+            />
 
+            <field
+                name="csap"
+                type="note"
+                class="alert alert-info"
+                label="Custom Scrollbar - Administrator part"
+            />
 
-    <field name="csap" type="note" class="alert alert-info" label="Custom Scrollbar - Administrator part" />
+            <field
+                name="admin"
+                type="radio"
+                class="btn-group btn-group-yesno"
+                label="Custom Scrollbar on Admin part"
+                default="1"
+                filter="integer"
+                >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
 
-        				<field
-        					name="admin"
-        					type="radio"
-        					class="btn-group btn-group-yesno"
-        					label="Custom Scrollbar on Administrator part"
-        					default="1"
-        					filter="integer"
-        					>
-        					<option value="0">JNO</option>
-        					<option value="1">JYES</option>
-        				</field>
+            <field
+                name="admintrack"
+                type="note"
+                class="alert alert-info"
+                label="Scrollbar Track - Admin part"
+                showon="admin:1"
+            />
 
-                        <field name="admintrack" type="note" class="alert alert-info"
-                            label="Scrollbar Track - Administrator part"
-                            showon="admin:1" />
+            <field
+                name="tkawidth"
+                type="text"
+                label="Track width"
+                default="12px"
+                showon="admin:1"
+            />
 
-                        <field
-                            name="tkawidth"
-                            type="text"
-                            label="Track width"
-                            showon="admin:1"
-                            />
+            <field
+                name="tkabgcolor"
+                type="color"
+                label="Track background color"
+                default="#ffffff"
+                showon="admin:1"
+            />
 
-                        <field
-                            name="tkabgcolor"
-                            type="color"
-                            label="Track background color"
-                        showon="admin:1"
-                            />
+            <field
+                name="tkaborder"
+                type="radio"
+                class="btn-group btn-group-yesno"
+                label="Want border on track"
+                default="1"
+                showon="admin:1"
+                >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
 
-                            <field
-                                name="tkaborder"
-                                type="radio"
-            					class="btn-group btn-group-yesno"
-                                label="Want border on track"
-                            showon="admin:1"
-                                default="1"
-                                >
-            					<option value="0">JNO</option>
-            					<option value="1">JYES</option>
-            				</field>
+            <field
+                name="tkabcolor"
+                type="color"
+                label="Track border color"
+                default="#ffffff"
+                showon="tkaborder:1[AND]admin:1"
+            />
 
-                                <field
-                                    name="tkabcolor"
-                                    type="color"
+            <field
+                name="tkabwidth"
+                type="text"
+                label="Track border width"
+                default="0"
+                showon="tkaborder:1[AND]admin:1"
+            />
 
-                                    label="Track border color"
-                                    showon="tkaborder:1[AND]admin:1"
-                                    />
+            <field
+                name="tkabstyle"
+                type="list"
+                label="Track border style"
+                default="solid"
+                showon="tkaborder:1[AND]admin:1"
+                >
+                <option value="none">None</option>
+                <option value="dotted">Dotted</option>
+                <option value="dashed">Dashed</option>
+                <option value="solid">Solid</option>
+                <option value="double">Double</option>
+                <option value="groove">Groove</option>
+                <option value="ridge">Ridge</option>
+                <option value="inset">Inset</option>
+                <option value="outset">Outset</option>
+            </field>
 
-                                    <field
-                                        name="tkabwidth"
-                                        type="text"
-                                        label="Track border width"
-                            showon="tkaborder:1[AND]admin:1"
-                                        />
+            <field
+                name="tkabradius"
+                type="text"
+                label="Track border radius"
+                default="100px"
+                showon="tkaborder:1[AND]admin:1"
+            />
 
-                                <field
-                                    name="tkabstyle"
-                                    type="list"
-                                    label="Track border style"
-                                    showon="tkaborder:1[AND]admin:1"
-                                    default="solid"
-                                    >
-                                    <option value="none">None</option>
-                                    <option value="dotted">Dotted</option>
-                                    <option value="dashed">Dashed</option>
-                                    <option value="solid">Solid</option>
-                                    <option value="double">Double</option>
-                                    <option value="groove">Groove</option>
-                                    <option value="ridge">Ridge</option>
-                                    <option value="inset">Inset</option>
-                                    <option value="outset">Outset</option>
-    </field>
+            <field
+                name="adminthumb"
+                type="note"
+                class="alert alert-info"
+                label="Scrollbar Thumb - Admin part"
+                showon="admin:1"
+            />
 
-    <field
-        name="tkabradius"
-        type="text"
-        label="Track border radius"
-    showon="tkaborder:1[AND]admin:1"
-        />
+            <field
+                name="tbabgcolor"
+                type="color"
+                label="Thumb background color"
+                default="#d1c9cf"
+                showon="admin:1"
+            />
 
-    <field name="adminthumb" type="note" class="alert alert-info" label="Scrollbar Thumb - Administrator part" showon="admin:1" />
-
-    <field
-        name="tbawidth"
-        type="text"
-        label="Thumb width"
-        showon="admin:1"
-        />
-
-    <field
-        name="tbabgcolor"
-        type="color"
-        label="Thumb background color"
-            showon="admin:1"
-        />
-
-        <field
-            name="tbaborder"
-            type="radio"
-            class="btn-group btn-group-yesno"
-            label="Want border on thumb"
-        showon="admin:1"
-            default="1"
-            >
-            <option value="0">JNO</option>
-            <option value="1">JYES</option>
-        </field>
+            <field
+                name="tbaborder"
+                type="radio"
+                class="btn-group btn-group-yesno"
+                label="Want border on thumb"
+                showon="admin:1"
+                default="1"
+                >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
 
             <field
                 name="tbabcolor"
                 type="color"
-
                 label="Thumb border color"
-                showon="thaborder:1[AND]admin:1"
-                />
+                default="#ffffff"
+                showon="tbaborder:1[AND]admin:1"
+            />
 
-                <field
-                    name="tbabwidth"
-                    type="text"
-
-                    label="Thumb border width"
-                        showon="thaborder:1[AND]admin:1"
-                    />
+            <field
+                name="tbabwidth"
+                type="text"
+                default="0"
+                label="Thumb border width"
+                showon="tbaborder:1[AND]admin:1"
+            />
 
             <field
                 name="tbabstyle"
                 type="list"
                 label="Thumb border style"
-                showon="thaborder:1[AND]admin:1"
                 default="solid"
+                showon="tbaborder:1[AND]admin:1"
                 >
                 <option value="none">None</option>
                 <option value="dotted">Dotted</option>
@@ -377,66 +417,66 @@
                 <option value="ridge">Ridge</option>
                 <option value="inset">Inset</option>
                 <option value="outset">Outset</option>
-    </field>
-    <field
-        name="tbabradius"
-        type="text"
-        label="Track border radius"
-            showon="thaborder:1[AND]admin:1"
-        />
+            </field>
 
-    <field name="adminthumbhover" type="note" class="alert alert-info"
-        label="Scrollbar Thumb - Administrator part (on Hover)"
-        showon="admin:1" />
+            <field
+                name="tbabradius"
+                type="text"
+                label="Track border radius"
+                default="100px"
+                showon="tbaborder:1[AND]admin:1"
+            />
 
-    <field
-        name="tbhawidth"
-        type="text"
-        label="Thumb width"
-showon="admin:1"
-        />
+            <field
+                name="adminthumbhover"
+                type="note"
+                class="alert alert-info"
+                label="Scrollbar Thumb - Admin part (on Hover)"
+                showon="admin:1"
+            />
 
-    <field
-        name="tbhabgcolor"
-        type="color"
-        label="Thumb background color"
-showon="admin:1"
-        />
+            <field
+                name="tbhabgcolor"
+                type="color"
+                label="Thumb background color"
+                default="#787878"
+                showon="admin:1"
+            />
 
-        <field
-            name="tbhaborder"
-            type="radio"
-            class="btn-group btn-group-yesno"
-            label="Want border on thumb"
-                    showon="admin:1"
-            default="1"
-            >
-            <option value="0">JNO</option>
-            <option value="1">JYES</option>
-        </field>
+            <field
+                name="tbhaborder"
+                type="radio"
+                class="btn-group btn-group-yesno"
+                label="Want border on thumb"
+                default="1"
+                showon="admin:1"
+                >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
 
             <field
                 name="tbhabcolor"
                 type="color"
-
                 label="Thumb border color"
-            showon="tbhaborder:1[AND]admin:1"
-                />
+                default="#ffffff"
+                showon="tbhaborder:1[AND]admin:1"
+            />
 
-                <field
-                    name="tbhabwidth"
-                    type="text"
-
-                    label="Thumb border width"
-            showon="tbhaborder:1[AND]admin:1"
-                    />
+            <field
+                name="tbhabwidth"
+                type="text"
+                label="Thumb border width"
+                default="0"
+                showon="tbhaborder:1[AND]admin:1"
+            />
 
             <field
                 name="tbhabstyle"
                 type="list"
                 label="Thumb border style"
-                    showon="tbhaborder:1[AND]admin:1"
                 default="solid"
+                showon="tbhaborder:1[AND]admin:1"
                 >
                 <option value="none">None</option>
                 <option value="dotted">Dotted</option>
@@ -447,15 +487,17 @@ showon="admin:1"
                 <option value="ridge">Ridge</option>
                 <option value="inset">Inset</option>
                 <option value="outset">Outset</option>
-    </field>
-    <field
-        name="tbhabradius"
-        type="text"
-        label="Track border radius"
-            showon="tbhaborder:1[AND]admin:1"
-        />
+            </field>
 
-        			</fieldset>
-    		</fields>
-    	</config>
-    </extension>
+            <field
+                name="tbhabradius"
+                type="text"
+                label="Track border radius"
+                default="100px"
+                showon="tbhaborder:1[AND]admin:1"
+            />
+
+            </fieldset>
+        </fields>
+    </config>
+</extension>
