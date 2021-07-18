@@ -6,13 +6,13 @@ Custom Scrollbar for Joomla
 
 Configuration
 ----------
-![introduction](assets/intro.jpg)
+![introduction](assets/intro.JPG)
 
-![site](assets/site.jpg)
+![site](assets/site.JPG)
 
-![administrator](assets/admin.jpg)
+![administrator](assets/admin.JPG)
 
-![description](assets/desc.jpg)
+![description](assets/desc.JPG)
 
 Demo
 ----------
