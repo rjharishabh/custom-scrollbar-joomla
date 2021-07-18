@@ -12,6 +12,7 @@ use Joomla\CMS\Factory;
 /**
  * Custom Scrollbar Plugin.
  *
+ * @since	1.0.0
  */
 class PlgSystemRPCustomscrollbar extends CMSPlugin
 {
@@ -31,7 +32,6 @@ class PlgSystemRPCustomscrollbar extends CMSPlugin
 	public function SiteScrollbar()
 	{
 		$params = $this->params;
-
 
 		$tkswidth = $params->get('tkswidth', '12px');
 		$tksbgcolor = $params->get('tksbgcolor', '#ffffff');
@@ -161,12 +161,12 @@ class PlgSystemRPCustomscrollbar extends CMSPlugin
 	}
 
 	/**
-	* Add the javascript for the accessibility menu
-	*
-	* @return  void
-	*
-	* @since   1.0.0
-	*/
+	 * Add the javascript for the accessibility menu
+	 *
+	 * @return  void
+	 *
+	 * @since   1.0.0
+	 */
 	public function onBeforeCompileHead()
 	{
 		$doc = Factory::getDocument();

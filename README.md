@@ -6,6 +6,8 @@ Custom Scrollbar for Joomla
 
 Configuration
 ----------
+![configuration J3](assets/config_J3.JPG)
+
 ![introduction](assets/intro.JPG)
 
 ![site](assets/site.JPG)
