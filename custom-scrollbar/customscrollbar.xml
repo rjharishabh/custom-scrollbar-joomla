@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<extension type="plugin" version="1.0" method="upgrade" group="system">
+<extension type="plugin" method="upgrade" group="system">
     <name>plg_system_custom_scrollbar</name>
     <author>RP Extensions</author>
     <creationDate>July 2021</creationDate>
     <copyright>(C) 2021 Open Source Matters, Inc.</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <authorEmail>rpextensions@gmail.com</authorEmail>
-    <authorUrl>rpextensions.com</authorUrl>
+    <authorUrl>https://rpextensions.com</authorUrl>
     <version>1.0.0</version>
     <description>PLG_SYSTEM_CUSTOM_SCROLLBAR_XML_DESCRIPTION</description>
 
@@ -498,6 +498,18 @@
             />
 
             </fieldset>
+            <fieldset name="description">
+                <field
+                    name="desc"
+                    type="note"
+                    label="Scrollbar Track - Site part"
+                />
+            </fieldset>
         </fields>
     </config>
+
+    <updateservers>
+    	<server type="extension" priority="1" name="RP Custom Scrollbar Updates">https://raw.githubusercontent.com/rpextensions/custom-scrollbar-joomla/master/update.xml</server>
+ 	</updateservers>
+
 </extension>

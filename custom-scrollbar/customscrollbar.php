@@ -29,6 +29,7 @@ class PlgSystemCustomscrollbar extends CMSPlugin
 	{
 		$params = $this->params;
 
+
 		$tkswidth = $params->get('tkswidth', '12px');
 		$tksbgcolor = $params->get('tksbgcolor', '#ffffff');
 		$tksborder = $params->get('tksborder', '1');
