@@ -1,9 +1,6 @@
 <?php
 /**
- * @package     Joomla.Plugin
- * @subpackage  System.customscrollbar
- *
- * @copyright   (C) 2021 Open Source Matters, Inc. <https://www.joomla.org>
+ * @copyright   (C) 2021 Rishabh Ranjan Jha
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -16,15 +13,21 @@ use Joomla\CMS\Factory;
  * Custom Scrollbar Plugin.
  *
  */
-class PlgSystemCustomscrollbar extends CMSPlugin
+class PlgSystemRPCustomscrollbar extends CMSPlugin
 {
 	/**
 	 * Application object.
 	 *
 	 * @var    CMSApplicationInterface
+	 * @since  1.0.0
 	 */
 	protected $app;
 
+	/**
+	 * Scrollbar for Site part
+	 *
+	 * @since	1.0.0
+	 */
 	public function SiteScrollbar()
 	{
 		$params = $this->params;
@@ -89,7 +92,11 @@ class PlgSystemCustomscrollbar extends CMSPlugin
 		  return $style;
 	}
 
-
+	/**
+	 * Scrollbar for Admin part
+	 *
+	 * @since	1.0.0
+	 */
 	public function AdminScrollbar()
 	{
 		$params = $this->params;
@@ -153,6 +160,13 @@ class PlgSystemCustomscrollbar extends CMSPlugin
 		  return $style;
 	}
 
+	/**
+	* Add the javascript for the accessibility menu
+	*
+	* @return  void
+	*
+	* @since   1.0.0
+	*/
 	public function onBeforeCompileHead()
 	{
 		$doc = Factory::getDocument();

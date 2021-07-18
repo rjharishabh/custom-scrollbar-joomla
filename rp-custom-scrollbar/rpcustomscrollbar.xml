@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="plugin" method="upgrade" group="system">
     <name>plg_system_custom_scrollbar</name>
-    <author>RP Extensions</author>
+    <author>Rishabh Ranjan Jha</author>
     <creationDate>July 2021</creationDate>
-    <copyright>(C) 2021 Open Source Matters, Inc.</copyright>
+    <copyright>(C) 2021 Rishabh Ranjan Jha</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <authorEmail>rpextensions@gmail.com</authorEmail>
-    <authorUrl>https://rpextensions.com</authorUrl>
     <version>1.0.0</version>
     <description>PLG_SYSTEM_CUSTOM_SCROLLBAR_XML_DESCRIPTION</description>
 
     <files>
-        <filename plugin="customscrollbar">customscrollbar.php</filename>
+        <filename plugin="rpcustomscrollbar">rpcustomscrollbar.php</filename>
     </files>
 
     <languages folder="administrator/language">
-        <language tag="en-GB">language/en-GB/en-GB.plg_system_customscrollbar.ini</language>
-        <language tag="en-GB">language/en-GB/en-GB.plg_system_customscrollbar.sys.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_system_rpcustomscrollbar.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_system_rpcustomscrollbar.sys.ini</language>
     </languages>
 
     <config>
@@ -27,14 +26,14 @@
                     name="cssp"
                     type="note"
                     class="alert alert-info"
-                    label="Custom Scrollbar - Site part"
+                    label="PLG_SYSTEM_CUSTOM_SCROLLBAR_SITE_PART"
                 />
 
                 <field
                     name="site"
                     type="radio"
                     class="btn-group btn-group-yesno"
-                    label="Custom Scrollbar on Site part"
+                    label="PLG_SYSTEM_CUSTOM_SCROLLBAR_ON_SITE_PART"
                     default="1"
                     filter="integer"
                     >
@@ -46,14 +45,14 @@
                 name="sitetrack"
                 type="note"
                 class="alert alert-info"
-                label="Scrollbar Track - Site part"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_SITE_PART"
                 showon="site:1"
             />
 
             <field
                 name="tkswidth"
                 type="text"
-                label="Track width"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_WIDTH"
                 default="12px"
                 showon="site:1"
             />
@@ -61,7 +60,7 @@
             <field
                 name="tksbgcolor"
                 type="color"
-                label="Track background color"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BACKGROUND_COLOR"
                 default="#ffffff"
                 showon="site:1"
             />
@@ -70,7 +69,7 @@
                 name="tksborder"
                 type="radio"
                 class="btn-group btn-group-yesno"
-                label="Want border on track"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_WANT_BORDER_ON_TRACK"
                 default="1"
                 showon="site:1"
                 >
@@ -81,7 +80,7 @@
             <field
                 name="tksbcolor"
                 type="color"
-                label="Track border color"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_COLOR"
                 default="#ffffff"
                 showon="tksborder:1[AND]site:1"
             />
@@ -89,7 +88,7 @@
             <field
                 name="tksbwidth"
                 type="text"
-                label="Track border width"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_WIDTH"
                 default="0"
                 showon="tksborder:1[AND]site:1"
             />
@@ -97,7 +96,7 @@
             <field
                 name="tksbstyle"
                 type="list"
-                label="Track border style"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_STYLE"
                 default="solid"
                 showon="tksborder:1[AND]site:1"
                 >
@@ -115,7 +114,7 @@
             <field
                 name="tksbradius"
                 type="text"
-                label="Track border radius"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_RADIUS"
                 default="100px"
                 showon="tksborder:1[AND]site:1"
             />
@@ -124,14 +123,14 @@
                 name="sitethumb"
                 type="note"
                 class="alert alert-info"
-                label="Scrollbar Thumb - Site part"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_SITE_PART"
                 showon="site:1"
             />
 
             <field
                 name="tbsbgcolor"
                 type="color"
-                label="Thumb background color"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BACKGROUND_COLOR"
                 default="#d1c9cf"
                 showon="site:1"
             />
@@ -140,7 +139,7 @@
                 name="tbsborder"
                 type="radio"
                 class="btn-group btn-group-yesno"
-                label="Want border on thumb"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_WANT_BORDER_ON_THUMB"
                 default="1"
                 showon="site:1"
                 >
@@ -151,7 +150,7 @@
             <field
                 name="tbsbcolor"
                 type="color"
-                label="Thumb border color"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_COLOR"
                 default="#ffffff"
                 showon="tbsborder:1[AND]site:1"
             />
@@ -160,14 +159,14 @@
                 name="tbsbwidth"
                 type="text"
                 default="0"
-                label="Thumb border width"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_WIDTH"
                 showon="tbsborder:1[AND]site:1"
             />
 
             <field
                 name="tbsbstyle"
                 type="list"
-                label="Thumb border style"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_STYLE"
                 default="solid"
                 showon="tbsborder:1[AND]site:1"
                 >
@@ -185,7 +184,7 @@
             <field
                 name="tbsbradius"
                 type="text"
-                label="Track border radius"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_RADIUS"
                 default="100px"
                 showon="tbsborder:1[AND]site:1"
             />
@@ -194,14 +193,14 @@
                 name="sitethumbhover"
                 type="note"
                 class="alert alert-info"
-                label="Scrollbar Thumb - Site part (on Hover)"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_SITE_PART_ONHOVER"
                 showon="site:1"
             />
 
             <field
                 name="tbhsbgcolor"
                 type="color"
-                label="Thumb background color"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BACKGROUND_COLOR"
                 default="#787878"
                 showon="site:1"
             />
@@ -210,7 +209,7 @@
                 name="tbhsborder"
                 type="radio"
                 class="btn-group btn-group-yesno"
-                label="Want border on thumb"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_WANT_BORDER_ON_THUMB"
                 default="1"
                 showon="site:1"
                 >
@@ -221,7 +220,7 @@
             <field
                 name="tbhsbcolor"
                 type="color"
-                label="Thumb border color"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_COLOR"
                 default="#ffffff"
                 showon="tbhsborder:1[AND]site:1"
             />
@@ -229,7 +228,7 @@
             <field
                 name="tbhsbwidth"
                 type="text"
-                label="Thumb border width"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_WIDTH"
                 default="0"
                 showon="tbhsborder:1[AND]site:1"
             />
@@ -237,7 +236,7 @@
             <field
                 name="tbhsbstyle"
                 type="list"
-                label="Thumb border style"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_STYLE"
                 default="solid"
                 showon="tbhsborder:1[AND]site:1"
                 >
@@ -255,7 +254,7 @@
             <field
                 name="tbhsbradius"
                 type="text"
-                label="Track border radius"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_RADIUS"
                 default="100px"
                 showon="tbhsborder:1[AND]site:1"
             />
@@ -264,14 +263,14 @@
                 name="csap"
                 type="note"
                 class="alert alert-info"
-                label="Custom Scrollbar - Administrator part"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_ADMIN_PART"
             />
 
             <field
                 name="admin"
                 type="radio"
                 class="btn-group btn-group-yesno"
-                label="Custom Scrollbar on Admin part"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_ON_ADMIN_PART"
                 default="1"
                 filter="integer"
                 >
@@ -283,14 +282,14 @@
                 name="admintrack"
                 type="note"
                 class="alert alert-info"
-                label="Scrollbar Track - Admin part"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_ADMIN_PART"
                 showon="admin:1"
             />
 
             <field
                 name="tkawidth"
                 type="text"
-                label="Track width"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_WIDTH"
                 default="12px"
                 showon="admin:1"
             />
@@ -298,7 +297,7 @@
             <field
                 name="tkabgcolor"
                 type="color"
-                label="Track background color"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BACKGROUND_COLOR"
                 default="#ffffff"
                 showon="admin:1"
             />
@@ -307,7 +306,7 @@
                 name="tkaborder"
                 type="radio"
                 class="btn-group btn-group-yesno"
-                label="Want border on track"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_WANT_BORDER_ON_TRACK"
                 default="1"
                 showon="admin:1"
                 >
@@ -318,7 +317,7 @@
             <field
                 name="tkabcolor"
                 type="color"
-                label="Track border color"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_COLOR"
                 default="#ffffff"
                 showon="tkaborder:1[AND]admin:1"
             />
@@ -326,7 +325,7 @@
             <field
                 name="tkabwidth"
                 type="text"
-                label="Track border width"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_WIDTH"
                 default="0"
                 showon="tkaborder:1[AND]admin:1"
             />
@@ -334,7 +333,7 @@
             <field
                 name="tkabstyle"
                 type="list"
-                label="Track border style"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_STYLE"
                 default="solid"
                 showon="tkaborder:1[AND]admin:1"
                 >
@@ -352,7 +351,7 @@
             <field
                 name="tkabradius"
                 type="text"
-                label="Track border radius"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_RADIUS"
                 default="100px"
                 showon="tkaborder:1[AND]admin:1"
             />
@@ -361,14 +360,14 @@
                 name="adminthumb"
                 type="note"
                 class="alert alert-info"
-                label="Scrollbar Thumb - Admin part"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_ADMIN_PART"
                 showon="admin:1"
             />
 
             <field
                 name="tbabgcolor"
                 type="color"
-                label="Thumb background color"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BACKGROUND_COLOR"
                 default="#d1c9cf"
                 showon="admin:1"
             />
@@ -377,7 +376,7 @@
                 name="tbaborder"
                 type="radio"
                 class="btn-group btn-group-yesno"
-                label="Want border on thumb"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_WANT_BORDER_ON_THUMB"
                 showon="admin:1"
                 default="1"
                 >
@@ -388,7 +387,7 @@
             <field
                 name="tbabcolor"
                 type="color"
-                label="Thumb border color"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_COLOR"
                 default="#ffffff"
                 showon="tbaborder:1[AND]admin:1"
             />
@@ -397,14 +396,14 @@
                 name="tbabwidth"
                 type="text"
                 default="0"
-                label="Thumb border width"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_WIDTH"
                 showon="tbaborder:1[AND]admin:1"
             />
 
             <field
                 name="tbabstyle"
                 type="list"
-                label="Thumb border style"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_STYLE"
                 default="solid"
                 showon="tbaborder:1[AND]admin:1"
                 >
@@ -422,7 +421,7 @@
             <field
                 name="tbabradius"
                 type="text"
-                label="Track border radius"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_RADIUS"
                 default="100px"
                 showon="tbaborder:1[AND]admin:1"
             />
@@ -431,14 +430,14 @@
                 name="adminthumbhover"
                 type="note"
                 class="alert alert-info"
-                label="Scrollbar Thumb - Admin part (on Hover)"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_ADMIN_PART_ONHOVER"
                 showon="admin:1"
             />
 
             <field
                 name="tbhabgcolor"
                 type="color"
-                label="Thumb background color"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BACKGROUND_COLOR"
                 default="#787878"
                 showon="admin:1"
             />
@@ -447,7 +446,7 @@
                 name="tbhaborder"
                 type="radio"
                 class="btn-group btn-group-yesno"
-                label="Want border on thumb"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_WANT_BORDER_ON_THUMB"
                 default="1"
                 showon="admin:1"
                 >
@@ -458,7 +457,7 @@
             <field
                 name="tbhabcolor"
                 type="color"
-                label="Thumb border color"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_COLOR"
                 default="#ffffff"
                 showon="tbhaborder:1[AND]admin:1"
             />
@@ -466,7 +465,7 @@
             <field
                 name="tbhabwidth"
                 type="text"
-                label="Thumb border width"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_WIDTH"
                 default="0"
                 showon="tbhaborder:1[AND]admin:1"
             />
@@ -474,7 +473,7 @@
             <field
                 name="tbhabstyle"
                 type="list"
-                label="Thumb border style"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_STYLE"
                 default="solid"
                 showon="tbhaborder:1[AND]admin:1"
                 >
@@ -492,7 +491,7 @@
             <field
                 name="tbhabradius"
                 type="text"
-                label="Track border radius"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_RADIUS"
                 default="100px"
                 showon="tbhaborder:1[AND]admin:1"
             />
@@ -500,16 +499,41 @@
             </fieldset>
             <fieldset name="description">
                 <field
-                    name="desc"
-                    type="note"
-                    label="Scrollbar Track - Site part"
-                />
+                name="desctrack"
+                type="note"
+                class="alert alert-info"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_DESC_TRACK"
+            />
+            <field
+                name="descthumb"
+                type="note"
+                class="alert alert-info"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_DESC_THUMB"
+            />
+            <field
+                name="descpluginwork"
+                type="note"
+                class="alert alert-warning"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_DESC_PLUGIN_WORK"
+            />
+            <field
+                name="descpluginnotwork"
+                type="note"
+                class="alert alert-danger"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_DESC_PLUGIN_NOT_WORK"
+            />
+            <field
+                name="descreviewjed"
+                type="note"
+                class="alert alert-info"
+                label="PLG_SYSTEM_CUSTOM_SCROLLBAR_DESC_REVIEW_JED"
+            />
             </fieldset>
         </fields>
     </config>
 
     <updateservers>
-    	<server type="extension" priority="1" name="RP Custom Scrollbar Updates">https://raw.githubusercontent.com/rpextensions/custom-scrollbar-joomla/master/update.xml</server>
- 	</updateservers>
+        <server type="extension" priority="1" name="RP Custom Scrollbar Updates">https://raw.githubusercontent.com/rpextensions/custom-scrollbar-joomla/master/update.xml</server>
+    </updateservers>
 
 </extension>
